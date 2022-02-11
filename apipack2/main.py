@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, status, HTTPException
 import uvicorn
 from testapi.Fibo import Fibonacci
 app = FastAPI()
@@ -8,21 +8,34 @@ def root():
     return{"message: hello world"}
 
 @app.get("/getitem/{n}")
-def inp(n:int):
-    for i in range(0, len(list)):
-        if i==n:
-            return{'item not found'}   
-           
-        else:
-            user_saved = Fibonacci(n)
+def inp(n):
+    try:
+        a = int(n)
+    except ValueError:
+        raise HTTPException(status_code=422,detail='entry should be an integer')
+    else:
+        if type(a) is int:
+            list.append(n)
+            user_saved = Fibonacci(a)
             return user_saved
+
+         
+
+   
+  
+            
+
+        
+    
+    
+     
+           
+    
+            
              
 
-     
-@app.post("/putitem/{n}")
-def get_data(n:int):
-    list.append(n)
-    return list
+
+    
 
 if __name__=='__main__':
     uvicorn.run(app)      

@@ -1,4 +1,4 @@
-def Fibonacci(n: int):
+def Fibonacci(n:int):
     count  = 0
     n1 = 0
     n2 = 1
