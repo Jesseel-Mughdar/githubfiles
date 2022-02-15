@@ -3,6 +3,7 @@ from fastapi import FastAPI, Response, status, HTTPException
 import uvicorn
 from typing import Optional
 from pydantic import BaseModel
+import requests
 app =FastAPI()
 
 class Items(BaseModel):

@@ -14,10 +14,9 @@ def inp(n):
     except ValueError:
         raise HTTPException(status_code=422,detail='entry should be an integer')
     else:
-        if type(a) is int:
-            list.append(n)
-            user_saved = Fibonacci(a)
-            return user_saved
+        list.append(n)
+        user_saved = Fibonacci(a)
+        return user_saved
 
          
 
