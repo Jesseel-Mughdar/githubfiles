@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
-import foodfact
+import foodfactapi
 
 app = FastAPI()
 @app.get("/")
@@ -8,7 +8,7 @@ def main_func():
     return{"Message: Success"} 
 @app.get('/home/')
 def inp():
-    a = foodfact.api_call()
+    a = foodfactapi.api_call()
     return a
 
 uvicorn.run(app)
