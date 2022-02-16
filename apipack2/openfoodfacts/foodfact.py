@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
-def sec_func():
+def api_call():
     i=0
     l=[]
     r = requests.get('https://world.openfoodfacts.org/brands.json')
