@@ -1,4 +1,5 @@
-from unicodedata import name
+import json
+from textwrap import indent
 import requests
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -30,10 +31,9 @@ def sec_func():
         products = item['products']
         link = item['url']
         df=df.append({'data_id':data_id,'data_name':data_name ,'products':products,'link':link}, ignore_index=True)
-    df2=df.to_csv(index=False)
-    df3= df.to_csv("foodfacts.csv",index=False)
-     
-    return(df2)   
+        df3= df.to_csv("foodfacts.csv",index=False)
+    jsondata = json.dumps(data,indent= 2)
+    return(jsondata)
 
 
 
